@@ -1,0 +1,53 @@
+"Stability" - this metric states that instances belonging to the same class must have comparable explanations
+
+- Assume that the dataset has been balanced 50:50 for fraud/non-fraud.
+- Cluster explanations of all instances in test data by k-means, include the 'predicted fraud' label.
+- Number of clusters equals label values, in this case two (fraud/non-fraud)
+- For each instance in test data
+	- compare explanation cluster label to predicted class label
+	- if match, then stability satisfied
+	
+	alternatively
+	
+	- compare explanation cluster label in largest cluster to predicted class label
+	- Take ratio of majority predicted class label to minority class as the stability measure (the higher the value the closer the explanation clusters map to 
+	predicted results).	
+	
+Question: how do we know which explanations cluster equates to 'fraud' and which cluster equates to 'non-fraud'? If dataset is a 50:50 label split and we use 
+two clusters then we can just pick one cluster (use the largest).
+
+
+The training data is balanced but the Test data is not. 
+The majority class in the Test data will be non-Fraud, so assume that is 
+always the largest cluster.
+
+
+
+Write a Python function for my Kubeflow Notebook called 'calc_stability' that takes the SHAP 
+values dataframe generated earlier in the code as as input.
+
+Cluster the SHAP values instances into two clusters using a k-means algorithm.
+
+Identify the clusters with a value '0' and '1' and generate a new dataframe with a new column 
+added to identify to which cluster each individual instance has been assigned. Name this new 
+cluster column 'Cluster_' + <cluster number>.
+
+Using the value in y_test from earlier in the notebook assign the actual target value from the
+Test dataset to each instance in this new dataframe, based on the assumption that each value in 
+the X_Test dataset is a feature instance with an associated entry in the SHAP values dataframe 
+that is the input to this function.
+
+Calculate how many rows where the target class is '0' match the cluster value of '0' for each
+instance in this new dataframe. Generate a value that is the percentage of this target class 
+match to the assigned cluser. Print this percentage value in a format "xx.xx%" in the function 
+before the value is returned.
+
+Ensure that each line of code has comprehensive comments over each line explaining exactly 
+what is happening. 
+
+Add print statements at each major calculation point in the Python code so that I can see the 
+output of the steps of stages in the function as outputs in my Kubeflow Python Notebook.
+
+
+Run this function with the inputs being the 'features_df' created in the earlier code segment.
+

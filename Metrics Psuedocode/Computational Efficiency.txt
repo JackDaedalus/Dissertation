@@ -1,0 +1,13 @@
+"Computational Efficiency" 
+
+ - Use a standard comptuational framework - an identical cloud instance for each explanation process
+ 
+ - Use a consistent sample from the test data set for each explanation process
+ 
+ - Measure time taken by the interpretability framework to output an explanation
+ 
+ - Reason for importance of this metric;
+ 
+		- The metrics relates to the 'comptuational complexity' of the interpretability framework, which is important to consider in terms of feasibilty
+		- Computational time can be a bottleneck in generating explanations and may have an impact on the commercial viability of an explainability process
+		in a commercial credit card fraud detection application

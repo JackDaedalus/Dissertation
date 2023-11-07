@@ -1,0 +1,52 @@
+"Identity"
+- Start with first instance in test data
+- Search the remaining instances in test data and calculate distance from first instance
+- Select first instance with zero distance, if any
+- Generate explanations for both instances
+- Calculate distance between both instance explanations
+- Generate success if explanation distance is equal to zero
+- Drop first instance from test data
+- Repeat with second instance until end of test data instances
+- Calculate rate of explanation distance = zero / instance feature distance = zero
+
+OR  (Go with this one!)
+
+- Start with first instance in test data
+- Search all other instances in test data and calculate distance from first instance (feature distance)
+- Select closest other instance to first instance, i
+- Generate explanations for all instances in test data
+- Calculate distance of first instance explanations from explanations in all other instances
+- Select closest other instance to first instance (explanation distance), t
+- Generate success if instance id (i) = instance id (t)
+- Drop first instance from test data
+
+
+
+Actual ChatGPT Prompt...
+
+
+Identity Algorithm 
+
+Update the prior code segment, instead of generating CSV files for features and SHAP values create separate dataframes for each. 
+
+
+Write a Python function to insert into my Kubeflow Notebook where the parameter Input is these two data frames - one for features, and one for corresponding SHAP values.
+
+The function must check each instance (t) in the feature dataframe in turn to identify the next nearest instance (i) in terms of the closest Euclidean distance between the features. 
+
+In parallel, as the function checks feature instance t take the SHAP values at the corresponding instance row count in the SHAP dataframe and identify the nearest other instance in the SHAP dataframe in terms of Euclidean distance between the SHAP values. 
+
+Then check if the row numbers match for both distance calculations. 
+
+The function must check that for each instance checked in the Feature dataframe, the next closest feature instance has the same row number value, or not, as the same check in the SHAP dataframe for the corresponding starting instance row number. 
+
+Count the number of row number matches for next nearest feature and SHAP value instances. 
+
+Calculate and return the percentage of successful matches as compared to the total number of instances in the feature dataframe. Print this percentage value in a format "xx.xx%" in the function before the value is returned.
+
+Ensure that each line of code has comprehensive comments over each line explaining exactly what is happening. 
+
+Add print statements at each major calculation point in the Python code so that I can see the output of the steps of stages in the function as outputs in my Kubeflow Python Notebook.
+
+
+Run this function with the inputs being the 'features_df' and 'shap_values_df' created in the earlier code segment.

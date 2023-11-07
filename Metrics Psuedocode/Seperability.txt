@@ -1,0 +1,15 @@
+"Seperability" - two dissimilar instances muat have dissimilar explanations
+
+ - Choose subset S of test data
+		
+		-  ensure no duplicates instances exist. This is a comparison of features, as no explanations have been generated yet.
+		-  remove any instances with duplicated features
+		-  generate explanations for each remaining instance in the subset of test data
+		
+ - For every instance in S
+ 
+		- compare explanations with all other instance explanations
+		- if no duplicates are found; mark instance as 'success'
+
+
+This metric tends to score high. Maybe consider a small tolerance when checking explanations for duplicates.

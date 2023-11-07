@@ -1,0 +1,16 @@
+"Similarity" - thia metric states that the more similar the instances to be explained, the closer their explanations should be and vice versa.
+
+ - Normalise instances in the test data, before explanations generated (DBSCAN)
+ 
+ - cluster instances in test data into two clusters (fraud/non-fraud)
+ 
+ - generate explanations for each instance
+ 
+ - normalise the explanations
+ 
+ - calculate mean pairwise Euclidean distance between explanations of test data in each cluster (fraud/non-fraud)
+ 
+ - the smaller the value the better
+ 
+ - normalise the end results across all explanation processes before evaluating significance
+ 
