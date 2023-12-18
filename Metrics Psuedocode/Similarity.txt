@@ -1,4 +1,4 @@
-"Similarity" - thia metric states that the more similar the instances to be explained, the closer their explanations should be and vice versa.
+"Similarity" - this metric states that the more similar the instances to be explained, the closer their explanations should be and vice versa.
 
  - Normalise instances in the test data, before explanations generated (DBSCAN)
  
@@ -13,4 +13,47 @@
  - the smaller the value the better
  
  - normalise the end results across all explanation processes before evaluating significance
+
+
+Revised algorithm...To measure the similarity metric, we cluster instances in the testing data set, after
+normalization using DBSCAN algorithm. For each framework, we normalize the explanations
+and calculate the mean pairwise Euclidean distances between explanations of testing instances
+in the same cluster. The framework with the smallest mean pairwise Euclidean distances across
+its clusters is the best reflecting the similarity metric.
+
+ - Pass instances and their respective explanations to a function
+
+ - Normalise instances in the test data(DBSCAN)
+ 
+ - Cluster instances in test data into clusters (Note:- not just two clusters, could be more)
+ 
+ - Group the explanations based on the cluster to which their associated instance has been assigned
+ 
+ - Calculate mean pairwise Euclidean distance between explanations in each of the  groups (Note:- not just two groups, could be more)
+ 
+ - Calculate the average of the two distance values just generated
+
+ 
+ 
+Write a Python function called 'get_similarity_metric', for use in a Kubeflow notebook, that takes two panda dataframes 
+as input along with a text string called "XAI_Type".
+
+The first dataframe parameter is named 'features_df' and is a list of instances from a dataset. 
+
+The second dataframe parameter is named 'xai_values_df' and is a list of SHAP values for each 
+corresponding features for each instance in the first dataframe.
+
+Normalise the values in the first dataframe ('features_df') using a DBSCAN algorithm.
+
+Using K-Means clustering, cluster the values in the first dataframe ('features_df') into an appropriate number of clusters. 
+
+Group the explanations in 'xai_values_df' for the associated instances in each seperate cluster into seperate groups.
+
+Calculate mean pairwise Euclidean distance between explanations in each of the explanation groups
+
+Calculate a single value which is the average of the distance calculations from all of the explanation groups. 
+
+
+
+ 
  

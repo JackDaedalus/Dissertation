@@ -22,8 +22,6 @@ OR  (Go with this one!)
 
 
 
-Actual ChatGPT Prompt...
-
 
 Identity Algorithm 
 

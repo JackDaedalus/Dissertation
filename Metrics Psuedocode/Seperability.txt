@@ -1,8 +1,19 @@
-"Seperability" - two dissimilar instances muat have dissimilar explanations
+
+"Seperability" - two dissimilar instances must have dissimilar explanations
+
+Take subset of test data and determine for each individual instance the number of duplicate
+explanations in entire subset, if any.
+
+To measure the separability metric, we choose a subset S of the testing data set that has no duplicates and get
+their explanations. Then for every instance s in S, we compare its explanation with all other explanations
+of instances in S and if such explanation has no duplicate then it satisfies the separability metric.
+
+
 
  - Choose subset S of test data
 		
-		-  ensure no duplicates instances exist. This is a comparison of features, as no explanations have been generated yet.
+		-  ensure no duplicate instances exist. This is a comparison of features, 
+		   as no explanations have been generated yet.
 		-  remove any instances with duplicated features
 		-  generate explanations for each remaining instance in the subset of test data
 		
@@ -13,3 +24,31 @@
 
 
 This metric tends to score high. Maybe consider a small tolerance when checking explanations for duplicates.
+
+
+
+
+Write a Python function called 'get_seperability_metric', for use in a Kubeflow notebook, that takes two panda dataframes 
+as input along with a text string called "XAI_Type".
+
+The first dataframe parameter is named 'features_df' and is a list of instances from a dataset. 
+
+The second dataframe parameter is named 'xai_values_df' and is a list of SHAP values for each 
+corresponding features for each instance in the first dataframe.
+
+Check the first dataframe that it does not contain any duplicate rows. If any duplicate rows are found, remove 
+all but the first one. At the same time remove the corresponding rows from the SHAP value dataframe (the second 
+dataframe).
+
+Loop through the first dataframe and for every instance in the first dataframe, extract the associated row in the 
+SHAP value dataframe (the second dataframe) and check if this row has any duplicates in the entire second dataframe. 
+
+If no duplicates are found increment a counter named 'iSeperation_success'.
+
+If a duplicate is found increment a counter name 'iSeperation-failure' and print 'Failure' to display.
+
+
+After looping through the entire first dataframe generate a percentage number which is the proportion of the value of 
+counter named 'iSeperation_success' against the row count of the first dataframe (the instance dataframe).
+
+Return this percentage value as the output from the Python function.
