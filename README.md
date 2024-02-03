@@ -28,14 +28,20 @@ Contains the .ipynb Python Notebooks.
 The NN model building is done in the Primary Model CC Fraud NN.ipynb file. 
   - This is the first step, and stores a model in the filestructure.
   - The credit cards fraud dataset for model building and experiments is located in this folder: CreditCard_Fraud_Dataset_25KRows_LargerSet_v1-0_July2020.csv
-  - Teh file Select_CC_Fraud_Features_v1_1.csv is used in the feature selection process.
+  - The file Select_CC_Fraud_Features_v1_1.csv is used in the feature selection process.
 
-Each XAI method has a dedicated Notebook.
+Each XAI method (SHAP, LIME, ANCHOR, and DiCE) has a dedicated Notebook.
  - The stored model is loaded and re-verified.
- - The test data is broken into 20 equal chunks for XAI scoring. After each data blocked is scored the values are written out to a file. This file is incrementally build up over time, and the end results are averaged (externally).
+ - The test data is broken into 20 equal chunks for XAI scoring. After each data blocked is scored the values are written out to a file. This file is incrementally built up over time, and the end results are averaged (externally).
 
 The statistical analysis notebook is also stored in this folder (Friedman Test.ipynb)
  - The input of the mean metric score is also located here (XAI_StatTest2_RowLables_v1.xlsx).
+
+The following notebooks were created for function operations that are shared across each of the XAI metrics experiment notebooks.
+  - DS_Model_Build_Evaluation_Functions.ipynb
+  - DS_Visualisation_Functions.ipynb
+  - XAI_Experiment_Functions.ipynb
+  - XAI_Metrics_Functions.ipynb
 
 
 During runtime additional output files to verify XAI methods will be produced.
