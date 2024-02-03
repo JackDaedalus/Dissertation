@@ -56,4 +56,3 @@ Calculate a single value which is the average of the distance calculations from 
 
 
  
- 

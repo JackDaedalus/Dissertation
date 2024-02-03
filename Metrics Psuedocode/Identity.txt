@@ -48,3 +48,14 @@ Add print statements at each major calculation point in the Python code so that 
 
 
 Run this function with the inputs being the 'features_df' and 'shap_values_df' created in the earlier code segment.
+
+
+
+
+
+
+Counterfactual does not score well in the Identity metric because the size of a counterfactual will often need to be quite large to 'flip' a fraud classification for a given instance.
+
+Thus the euclidean distance values between different XAI instances can be quite large. Similar instances can have a greater variation in terms of the magnitude of Counterfactual values
+than one would see with other XAI methods. 
+
