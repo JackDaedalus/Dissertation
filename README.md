@@ -1,5 +1,5 @@
 # Dissertation
-Primary Dissertation Repo (post October)
+Primary Dissertation Repo (February 2024)
 
 
 
@@ -7,7 +7,8 @@ Primary Dissertation Repo (post October)
 
 ## Dissertation_Drafts
 
-November and December 2023 folders - drafts of disseration. The December 2023 folder is the most current.
+November. December 2023 folders - prior drafts of disseration. 
+The February 2024 folder is the most current. This represented the submission of the full dissertation for supervisor review.
 
 
 
@@ -18,28 +19,25 @@ Text files with a the psuedocode for each of the XAI metrics built for this diss
 
 
 
-
 ## Notebooks
-
-### November 2023 Back Up
-
-
 
 
 ### XAI Notebooks 
-Contains the .ipynb Python Notebooks. At the moment each notebook creates a new model each time, then generate the XAI values on a small subset of the test data, before generating the metric scores.
+Contains the .ipynb Python Notebooks. 
 
-These notebooks will be updated in early 2024 so that;
- 
- - The NN model building is done only once and stored as an input to the XAI metrics notebooks.
- - The test data is broken into 20 equal chunks for XAI scoring. After each data blocked is scored the values are written out to a file. 
-This file is incrementally build up over time, and the end results are averaged. A 'mock-up' notebook of how this experiment processing will take place is included.
+The NN model building is done in the Primary Model CC Fraud NN.ipynb file. 
+  - This is the first step, and stores a model in the filestructure.
+  - The credit cards fraud dataset for model building and experiments is located in this folder: CreditCard_Fraud_Dataset_25KRows_LargerSet_v1-0_July2020.csv
+  - Teh file Select_CC_Fraud_Features_v1_1.csv is used in the feature selection process.
 
+Each XAI method has a dedicated Notebook.
+ - The stored model is loaded and re-verified.
+ - The test data is broken into 20 equal chunks for XAI scoring. After each data blocked is scored the values are written out to a file. This file is incrementally build up over time, and the end results are averaged (externally).
 
+The statistical analysis notebook is also stored in this folder (Friedman Test.ipynb)
+ - The input of the mean metric score is also located here (XAI_StatTest2_RowLables_v1.xlsx).
 
 
 ### Statistical Analysis
-A credit default dataset was used for the initial build of the experiments notebooks. This was done for simplicity as this dataset is relatively small but has a '0' and '1' label,
-in common with the primary credti card fraud dataset to be analysed in this disseration. A Python notebook carries out the Friedman and Wilcoxon-signed pairwise tests and produces the outputs.
 
-The XL file is a mock up of the final mean XAI metrics scores.
+ - Friedman Test.ipynb and XAI_StatTest2_RowLables_v1.xlsx are replicated here.
