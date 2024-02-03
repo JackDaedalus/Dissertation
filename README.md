@@ -38,6 +38,8 @@ The statistical analysis notebook is also stored in this folder (Friedman Test.i
  - The input of the mean metric score is also located here (XAI_StatTest2_RowLables_v1.xlsx).
 
 
+During runtime additional output files to verify XAO methods will be produced.
+
 ### Statistical Analysis
 
  - Friedman Test.ipynb and XAI_StatTest2_RowLables_v1.xlsx are replicated here.
