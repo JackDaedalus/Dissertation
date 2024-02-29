@@ -5,9 +5,9 @@ Primary Dissertation Repo (February 2024)
 
 # Structure of Repo
 
-## Dissertation_Drafts
+## Dissertation
 
-The February 2024 folder is the most current. This represented the submission of the full dissertation immediately prior to submission.
+This folder contains the submission of the full dissertation document(pdf).
 
 
 
