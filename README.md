@@ -48,4 +48,9 @@ During runtime additional output files to verify XAI methods will be produced.
 
 ### Statistical Analysis
 
- - XAI Output Statistical Analysis.ipynb and XAI_StatTest2_RowLables_v1.xlsx are replicated here. 
+ - XAI Output Statistical Analysis.ipynb and XAI_StatTest2_RowLables_v1.xlsx are replicated here.
+
+
+## Experiment Structure
+
+![TUD Dissertation Figure One v1-2 260923](https://github.com/JackDaedalus/Dissertation/assets/21222832/096ea28b-7865-40b3-86e8-27a2a44d881e)
