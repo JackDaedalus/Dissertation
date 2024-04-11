@@ -9,6 +9,8 @@ Primary Dissertation Repo (April 2024)
 
 This folder contains the submission of the full dissertation document(pdf).
 
+It also contains the PPT file that was used to present and defend the Thesis.
+
 
 
 
