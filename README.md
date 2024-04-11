@@ -1,5 +1,5 @@
 # Dissertation
-Primary Dissertation Repo (February 2024)
+Primary Dissertation Repo (April 2024)
 
 
 
@@ -33,9 +33,13 @@ Each XAI method (SHAP, LIME, ANCHOR, and DiCE) has a dedicated Notebook.
  - The stored model is loaded and re-verified.
  - The test data is broken into 20 equal chunks for XAI scoring. After each data blocked is scored the values are written out to a file. This file is incrementally built up over time, and the end results are averaged (externally).
 
-The statistical analysis notebook is also stored in this folder (XAI Output Statistical Analysis.ipynb)
+The statistical analysis notebook is also stored in this folder (XAI Output Statistical Analysis Final Notebook.ipynb)
  - The input of the mean metric score is also located here (XAI_StatTest2_RowLables_v1.xlsx).
- - A secondary analysis was conducted in XAI Output Statistical Analysis Two.ipynb to verify the primary statistical review (data stored in XAI_StatTest2_RowLables_v2.xlsx).
+ - The results of each experiment are stored in four XL files for use in the Friedman Analysis
+ -       SHAP_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
+ -       LIME_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
+ -       ANCHOR_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
+ -       DiCE_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
 
 The following notebooks were created for function operations that are shared across each of the XAI metrics experiment notebooks.
   - DS_Model_Build_Evaluation_Functions.ipynb
@@ -48,7 +52,12 @@ During runtime additional output files to verify XAI methods will be produced.
 
 ### Statistical Analysis
 
- - XAI Output Statistical Analysis.ipynb and XAI_StatTest2_RowLables_v1.xlsx are replicated here.
+ - XAI Output Statistical Analysis Final Notebook.ipynb and XAI_StatTest2_RowLables_v1.xlsx are replicated here.
+ - The experiment results are also replicated here:
+   -  SHAP_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
+   -  LIME_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
+   -  ANCHOR_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
+   -  DiCE_XAI_Metrics_Experiments Formatted cf v1-1 250324.xlsx
 
 
 ## Experiment Structure
